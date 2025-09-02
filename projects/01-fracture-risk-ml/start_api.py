@@ -28,10 +28,10 @@ if __name__ == "__main__":
     print("📖 API documentation at: http://localhost:8000/docs")
     print("=" * 60)
     
-    # Start the server
+    # Start the server - LOCALHOST ONLY (most secure)
     uvicorn.run(
         app,
-        host="0.0.0.0",
+        host="127.0.0.1",  # Only accessible from your computer
         port=8000,
         reload=False
     )

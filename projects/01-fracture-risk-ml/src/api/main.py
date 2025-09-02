@@ -51,7 +51,7 @@ class PatientData(BaseModel):
     
     # Required fields
     age: int = Field(..., ge=18, le=95, description="Patient age in years")
-    gender: str = Field(..., regex="^(Male|Female)$", description="Patient gender")
+    gender: str = Field(..., pattern="^(Male|Female)$", description="Patient gender")
     bmi: float = Field(..., ge=16.0, le=50.0, description="Body Mass Index")
     spine_t_score: float = Field(..., ge=-4.0, le=2.0, description="Spine bone density T-score")
     hip_t_score: float = Field(..., ge=-4.0, le=2.0, description="Hip bone density T-score")
@@ -62,11 +62,11 @@ class PatientData(BaseModel):
     phosphorus_mg_dl: Optional[float] = Field(None, ge=1.5, le=6.0, description="Phosphorus level (mg/dL)")
     pth_pg_ml: Optional[float] = Field(None, ge=5.0, le=200.0, description="PTH level (pg/mL)")
     grip_strength_kg: Optional[float] = Field(None, ge=10.0, le=60.0, description="Grip strength (kg)")
-    smoking_status: Optional[str] = Field("Never", regex="^(Never|Former|Current)$", description="Smoking status")
+    smoking_status: Optional[str] = Field("Never", pattern="^(Never|Former|Current)$", description="Smoking status")
     alcohol_units_per_week: Optional[int] = Field(0, ge=0, le=30, description="Weekly alcohol units")
     previous_fracture_count: Optional[int] = Field(0, ge=0, le=10, description="Previous fractures count")
     family_history_fractures: Optional[bool] = Field(False, description="Family history of fractures")
-    exercise_frequency: Optional[str] = Field("Weekly", regex="^(Never|Rarely|Weekly|Daily)$", description="Exercise frequency")
+    exercise_frequency: Optional[str] = Field("Weekly", pattern="^(Never|Rarely|Weekly|Daily)$", description="Exercise frequency")
     
     class Config:
         schema_extra = {
@@ -411,6 +411,5 @@ if __name__ == "__main__":
     uvicorn.run(
         app, 
         host=config['server']['host'],
-        port=config['server']['port'],
-        debug=config['server']['debug']
+        port=config['server']['port']
     )

@@ -1,0 +1,94 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# R
+.Rproj.user/
+.Rhistory
+.RData
+.Ruserdata
+*.Rproj
+
+# Data files (keep structure, not actual data)
+data/external/*
+data/processed/*
+!data/external/.gitkeep
+!data/processed/.gitkeep
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Azure
+.azure/
+
+# Docker
+docker-compose.override.yml
+
+# Temporary files
+*.tmp
+*.temp
+
+# Credentials and secrets
+.env.local
+.env.production
+secrets/
+credentials/
+*.key
+*.pem
+
+# Model artifacts (too large for git)
+models/trained_models/*.pkl
+models/trained_models/*.joblib
+models/trained_models/*.h5
+models/trained_models/*.model
+!models/trained_models/.gitkeep
+
+# Large datasets
+*.csv
+*.parquet
+*.feather
+data/synthetic/*.csv
+data/synthetic/*.txt
+!data/synthetic/.gitkeep

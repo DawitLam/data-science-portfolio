@@ -1,0 +1,65 @@
+# Model Configuration
+models:
+  xgboost:
+    n_estimators: 100
+    max_depth: 6
+    learning_rate: 0.1
+    subsample: 0.8
+    colsample_bytree: 0.8
+    random_state: 42
+    eval_metric: 'logloss'
+    use_label_encoder: false
+  
+  lightgbm:
+    n_estimators: 100
+    max_depth: 6
+    learning_rate: 0.1
+    subsample: 0.8
+    colsample_bytree: 0.8
+    random_state: 42
+    verbose: -1
+  
+  random_forest:
+    n_estimators: 100
+    max_depth: 10
+    min_samples_split: 5
+    min_samples_leaf: 2
+    random_state: 42
+    n_jobs: -1
+  
+  logistic_regression:
+    random_state: 42
+    max_iter: 1000
+    class_weight: 'balanced'
+
+# Training Configuration
+training:
+  test_size: 0.2
+  validation_size: 0.2
+  cross_validation_folds: 5
+  random_state: 42
+  stratify: true
+
+# Optimization Configuration  
+optimization:
+  n_trials: 100
+  timeout: 3600  # 1 hour
+  direction: maximize
+  metric: roc_auc
+  pruning: true
+  
+# Evaluation Metrics
+metrics:
+  primary: roc_auc
+  secondary: 
+    - precision
+    - recall
+    - f1_score
+    - average_precision
+    - brier_score
+
+# Model Selection Criteria
+selection:
+  metric: auc
+  threshold: 0.8
+  stability_threshold: 0.05  # Max std dev across CV folds

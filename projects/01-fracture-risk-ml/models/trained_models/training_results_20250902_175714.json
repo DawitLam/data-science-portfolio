@@ -1,0 +1,1028 @@
+{
+  "logistic_regression": {
+    "train_auc": 1.0,
+    "train_precision": 1.0,
+    "train_recall": 1.0,
+    "train_f1": 1.0,
+    "val_auc": 1.0,
+    "val_precision": 1.0,
+    "val_recall": 1.0,
+    "val_f1": 1.0,
+    "val_average_precision": 1.0,
+    "val_brier_score": 1.7421114978282525e-05,
+    "overfitting": 0.0,
+    "cv_auc_mean": 1.0,
+    "cv_auc_std": 0.0
+  },
+  "random_forest": {
+    "train_auc": 1.0,
+    "train_precision": 1.0,
+    "train_recall": 1.0,
+    "train_f1": 1.0,
+    "val_auc": 1.0,
+    "val_precision": 1.0,
+    "val_recall": 1.0,
+    "val_f1": 1.0,
+    "val_average_precision": 1.0,
+    "val_brier_score": 0.028409781327753545,
+    "overfitting": 0.0,
+    "cv_auc_mean": 1.0,
+    "cv_auc_std": 0.0,
+    "feature_importance": [
+      {
+        "feature": "total_fractures",
+        "importance": 0.7237047061739569
+      },
+      {
+        "feature": "worst_t_score",
+        "importance": 0.009633323897756983
+      },
+      {
+        "feature": "age_bone_interaction",
+        "importance": 0.008840583056944719
+      },
+      {
+        "feature": "hip_t_score",
+        "importance": 0.00858048445150505
+      },
+      {
+        "feature": "bmi_bone_interaction",
+        "importance": 0.008547331021083356
+      },
+      {
+        "feature": "frax_age_component",
+        "importance": 0.00829123569233691
+      },
+      {
+        "feature": "survey_date",
+        "importance": 0.008229446370015598
+      },
+      {
+        "feature": "exercise_minutes_per_week",
+        "importance": 0.008157373307279269
+      },
+      {
+        "feature": "pth_pg_ml",
+        "importance": 0.007993235045137662
+      },
+      {
+        "feature": "bmi",
+        "importance": 0.007823315603391872
+      },
+      {
+        "feature": "spine_t_score",
+        "importance": 0.00777871514147478
+      },
+      {
+        "feature": "current_medications",
+        "importance": 0.007668601850607235
+      },
+      {
+        "feature": "frax_bmi_component",
+        "importance": 0.0076273179340319045
+      },
+      {
+        "feature": "bmi_zscore",
+        "importance": 0.007624581716704166
+      },
+      {
+        "feature": "registration_date",
+        "importance": 0.007558139349009204
+      },
+      {
+        "feature": "age",
+        "importance": 0.0075576599959973284
+      },
+      {
+        "feature": "measurement_date",
+        "importance": 0.007463960681690143
+      },
+      {
+        "feature": "height_cm",
+        "importance": 0.007444679700586841
+      },
+      {
+        "feature": "vitamin_d_ng_ml",
+        "importance": 0.007245321516061523
+      },
+      {
+        "feature": "grip_strength_kg",
+        "importance": 0.0072088273019148925
+      },
+      {
+        "feature": "calcium_mg_dl",
+        "importance": 0.007184513505393514
+      },
+      {
+        "feature": "weight_kg",
+        "importance": 0.007033270709274831
+      },
+      {
+        "feature": "quality_of_life_mental",
+        "importance": 0.0068926700597273325
+      },
+      {
+        "feature": "age_risk_factor",
+        "importance": 0.006873676885665888
+      },
+      {
+        "feature": "quality_of_life_physical",
+        "importance": 0.006868101705229479
+      },
+      {
+        "feature": "age_female",
+        "importance": 0.006808595100296742
+      },
+      {
+        "feature": "grip_strength_low",
+        "importance": 0.006758815076625315
+      },
+      {
+        "feature": "comorbidities",
+        "importance": 0.006574743034794408
+      },
+      {
+        "feature": "phosphorus_mg_dl",
+        "importance": 0.006524361725945117
+      },
+      {
+        "feature": "frax_like_score",
+        "importance": 0.006505870589015027
+      },
+      {
+        "feature": "alcohol_units_per_week",
+        "importance": 0.004271826128376288
+      },
+      {
+        "feature": "pain_level_0_10",
+        "importance": 0.004260844532985809
+      },
+      {
+        "feature": "mobility_status",
+        "importance": 0.0031451379663807863
+      },
+      {
+        "feature": "fear_of_falling_1_5",
+        "importance": 0.0029843132477382272
+      },
+      {
+        "feature": "care_satisfaction_1_5",
+        "importance": 0.002760167810750793
+      },
+      {
+        "feature": "comorbidity_count",
+        "importance": 0.0025037696933384954
+      },
+      {
+        "feature": "ethnicity",
+        "importance": 0.0019392463620879063
+      },
+      {
+        "feature": "age_group",
+        "importance": 0.001933988313177904
+      },
+      {
+        "feature": "smoking_risk",
+        "importance": 0.0018894351321821136
+      },
+      {
+        "feature": "insurance_type",
+        "importance": 0.0017394282254042032
+      },
+      {
+        "feature": "education_level",
+        "importance": 0.001729072354076149
+      },
+      {
+        "feature": "falls_past_year",
+        "importance": 0.00171045139785299
+      },
+      {
+        "feature": "smoking_status",
+        "importance": 0.0015909179401304996
+      },
+      {
+        "feature": "bmi_category",
+        "importance": 0.0015788875182537964
+      },
+      {
+        "feature": "exercise_frequency",
+        "importance": 0.0015099723795923238
+      },
+      {
+        "feature": "previous_fracture_count",
+        "importance": 0.0013153700646827485
+      },
+      {
+        "feature": "frax_previous_fx_component",
+        "importance": 0.0013132863933776667
+      },
+      {
+        "feature": "family_history_fractures",
+        "importance": 0.0010713118250816579
+      },
+      {
+        "feature": "exercise_adequate",
+        "importance": 0.0010320984190904743
+      },
+      {
+        "feature": "frax_smoking_component",
+        "importance": 0.000986575597859788
+      },
+      {
+        "feature": "has_osteoporosis",
+        "importance": 0.0009636975112024857
+      },
+      {
+        "feature": "is_elderly",
+        "importance": 0.0009354103473929922
+      },
+      {
+        "feature": "spine_bone_category",
+        "importance": 0.0008784501641986189
+      },
+      {
+        "feature": "hip_bone_category",
+        "importance": 0.0008370000698507757
+      },
+      {
+        "feature": "grip_strength_very_low",
+        "importance": 0.0008185579297672857
+      },
+      {
+        "feature": "vitamin_d_severely_deficient",
+        "importance": 0.0008127532421481528
+      },
+      {
+        "feature": "frax_family_history_component",
+        "importance": 0.0008108423080802494
+      },
+      {
+        "feature": "has_previous_fracture",
+        "importance": 0.000788968314024729
+      },
+      {
+        "feature": "is_very_elderly",
+        "importance": 0.0007781364292965764
+      },
+      {
+        "feature": "worst_bone_category",
+        "importance": 0.0007578218862416822
+      },
+      {
+        "feature": "metabolic_dysfunction_score",
+        "importance": 0.0007432431745449694
+      },
+      {
+        "feature": "dietary_calcium_adequate",
+        "importance": 0.0007215720818870662
+      },
+      {
+        "feature": "postmenopausal",
+        "importance": 0.0007112608748096185
+      },
+      {
+        "feature": "gender",
+        "importance": 0.0006761778510395029
+      },
+      {
+        "feature": "family_history_risk",
+        "importance": 0.0006410827248831413
+      },
+      {
+        "feature": "vitamin_d_deficient",
+        "importance": 0.0006397285923042965
+      },
+      {
+        "feature": "frax_gender_component",
+        "importance": 0.0006230582148101667
+      },
+      {
+        "feature": "multiple_previous_fractures",
+        "importance": 0.0005099856222831984
+      },
+      {
+        "feature": "bmi_risk_high",
+        "importance": 0.000476848541805881
+      },
+      {
+        "feature": "sarcopenia_risk",
+        "importance": 0.000387136835909954
+      },
+      {
+        "feature": "bmi_risk_low",
+        "importance": 0.000371805213039545
+      },
+      {
+        "feature": "has_osteopenia",
+        "importance": 0.00035534325970867524
+      },
+      {
+        "feature": "multiple_comorbidities",
+        "importance": 0.00030586442088327586
+      },
+      {
+        "feature": "pth_elevated",
+        "importance": 0.00015847300010294983
+      },
+      {
+        "feature": "calcium_low",
+        "importance": 2.722188790941591e-05
+      },
+      {
+        "feature": "pth_severely_elevated",
+        "importance": 0.0
+      },
+      {
+        "feature": "alcohol_risk",
+        "importance": 0.0
+      },
+      {
+        "feature": "alcohol_excessive",
+        "importance": 0.0
+      },
+      {
+        "feature": "calcium_abnormal",
+        "importance": 0.0
+      },
+      {
+        "feature": "frax_alcohol_component",
+        "importance": 0.0
+      }
+    ]
+  },
+  "xgboost": {
+    "train_auc": 1.0,
+    "train_precision": 1.0,
+    "train_recall": 1.0,
+    "train_f1": 1.0,
+    "val_auc": 1.0,
+    "val_precision": 1.0,
+    "val_recall": 1.0,
+    "val_f1": 1.0,
+    "val_average_precision": 1.0,
+    "val_brier_score": 8.534472250507091e-07,
+    "overfitting": 0.0,
+    "cv_auc_mean": 1.0,
+    "cv_auc_std": 0.0,
+    "feature_importance": [
+      {
+        "feature": "total_fractures",
+        "importance": 0.9342412352561951
+      },
+      {
+        "feature": "age",
+        "importance": 0.004076144192367792
+      },
+      {
+        "feature": "gender",
+        "importance": 0.003506287932395935
+      },
+      {
+        "feature": "has_osteoporosis",
+        "importance": 0.0029228772036731243
+      },
+      {
+        "feature": "worst_bone_category",
+        "importance": 0.002729647094383836
+      },
+      {
+        "feature": "comorbidity_count",
+        "importance": 0.0025456026196479797
+      },
+      {
+        "feature": "hip_t_score",
+        "importance": 0.002460306044667959
+      },
+      {
+        "feature": "ethnicity",
+        "importance": 0.0021915168035775423
+      },
+      {
+        "feature": "smoking_risk",
+        "importance": 0.0019004083005711436
+      },
+      {
+        "feature": "frax_age_component",
+        "importance": 0.0018822584534063935
+      },
+      {
+        "feature": "metabolic_dysfunction_score",
+        "importance": 0.0017484158743172884
+      },
+      {
+        "feature": "calcium_mg_dl",
+        "importance": 0.0017296179430559278
+      },
+      {
+        "feature": "bmi_zscore",
+        "importance": 0.0016381966415792704
+      },
+      {
+        "feature": "survey_date",
+        "importance": 0.001626725192181766
+      },
+      {
+        "feature": "dietary_calcium_adequate",
+        "importance": 0.0016097627812996507
+      },
+      {
+        "feature": "frax_like_score",
+        "importance": 0.0016007729573175311
+      },
+      {
+        "feature": "current_medications",
+        "importance": 0.001478636055253446
+      },
+      {
+        "feature": "age_group",
+        "importance": 0.001459627179428935
+      },
+      {
+        "feature": "grip_strength_low",
+        "importance": 0.001448680879548192
+      },
+      {
+        "feature": "measurement_date",
+        "importance": 0.0014345012605190277
+      },
+      {
+        "feature": "exercise_minutes_per_week",
+        "importance": 0.0013458422617986798
+      },
+      {
+        "feature": "grip_strength_kg",
+        "importance": 0.0013011075789108872
+      },
+      {
+        "feature": "quality_of_life_mental",
+        "importance": 0.0012927772477269173
+      },
+      {
+        "feature": "vitamin_d_ng_ml",
+        "importance": 0.0012789876200258732
+      },
+      {
+        "feature": "phosphorus_mg_dl",
+        "importance": 0.0012331015896052122
+      },
+      {
+        "feature": "falls_past_year",
+        "importance": 0.001225150772370398
+      },
+      {
+        "feature": "age_risk_factor",
+        "importance": 0.0012002481380477548
+      },
+      {
+        "feature": "registration_date",
+        "importance": 0.0011386413825675845
+      },
+      {
+        "feature": "height_cm",
+        "importance": 0.0011206988710910082
+      },
+      {
+        "feature": "age_bone_interaction",
+        "importance": 0.0010875810403376818
+      },
+      {
+        "feature": "frax_bmi_component",
+        "importance": 0.0010068697156384587
+      },
+      {
+        "feature": "bmi_category",
+        "importance": 0.0008697143639437854
+      },
+      {
+        "feature": "spine_t_score",
+        "importance": 0.0008567977347411215
+      },
+      {
+        "feature": "care_satisfaction_1_5",
+        "importance": 0.0008182600722648203
+      },
+      {
+        "feature": "bmi",
+        "importance": 0.000815083971247077
+      },
+      {
+        "feature": "pth_pg_ml",
+        "importance": 0.0007875885930843651
+      },
+      {
+        "feature": "mobility_status",
+        "importance": 0.0007573951734229922
+      },
+      {
+        "feature": "weight_kg",
+        "importance": 0.0007327244384214282
+      },
+      {
+        "feature": "quality_of_life_physical",
+        "importance": 0.0006994580035097897
+      },
+      {
+        "feature": "education_level",
+        "importance": 0.0006973286508582532
+      },
+      {
+        "feature": "pain_level_0_10",
+        "importance": 0.0006172210560180247
+      },
+      {
+        "feature": "comorbidities",
+        "importance": 0.0005449614254757762
+      },
+      {
+        "feature": "alcohol_units_per_week",
+        "importance": 0.00053121690871194
+      },
+      {
+        "feature": "exercise_frequency",
+        "importance": 0.0005057236412540078
+      },
+      {
+        "feature": "worst_t_score",
+        "importance": 0.00047518350766040385
+      },
+      {
+        "feature": "previous_fracture_count",
+        "importance": 0.00042950193164870143
+      },
+      {
+        "feature": "smoking_status",
+        "importance": 0.0004227164026815444
+      },
+      {
+        "feature": "family_history_fractures",
+        "importance": 0.00041556128417141736
+      },
+      {
+        "feature": "bmi_bone_interaction",
+        "importance": 0.0004050899005960673
+      },
+      {
+        "feature": "age_female",
+        "importance": 0.00036325608380138874
+      },
+      {
+        "feature": "fear_of_falling_1_5",
+        "importance": 0.0002863574482034892
+      },
+      {
+        "feature": "insurance_type",
+        "importance": 0.0002642660110723227
+      },
+      {
+        "feature": "frax_previous_fx_component",
+        "importance": 0.0002055408403975889
+      },
+      {
+        "feature": "spine_bone_category",
+        "importance": 3.6824400012847036e-05
+      },
+      {
+        "feature": "is_elderly",
+        "importance": 0.0
+      },
+      {
+        "feature": "is_very_elderly",
+        "importance": 0.0
+      },
+      {
+        "feature": "hip_bone_category",
+        "importance": 0.0
+      },
+      {
+        "feature": "bmi_risk_low",
+        "importance": 0.0
+      },
+      {
+        "feature": "bmi_risk_high",
+        "importance": 0.0
+      },
+      {
+        "feature": "has_osteopenia",
+        "importance": 0.0
+      },
+      {
+        "feature": "calcium_abnormal",
+        "importance": 0.0
+      },
+      {
+        "feature": "calcium_low",
+        "importance": 0.0
+      },
+      {
+        "feature": "vitamin_d_severely_deficient",
+        "importance": 0.0
+      },
+      {
+        "feature": "vitamin_d_deficient",
+        "importance": 0.0
+      },
+      {
+        "feature": "has_previous_fracture",
+        "importance": 0.0
+      },
+      {
+        "feature": "exercise_adequate",
+        "importance": 0.0
+      },
+      {
+        "feature": "alcohol_excessive",
+        "importance": 0.0
+      },
+      {
+        "feature": "alcohol_risk",
+        "importance": 0.0
+      },
+      {
+        "feature": "sarcopenia_risk",
+        "importance": 0.0
+      },
+      {
+        "feature": "grip_strength_very_low",
+        "importance": 0.0
+      },
+      {
+        "feature": "pth_elevated",
+        "importance": 0.0
+      },
+      {
+        "feature": "pth_severely_elevated",
+        "importance": 0.0
+      },
+      {
+        "feature": "frax_gender_component",
+        "importance": 0.0
+      },
+      {
+        "feature": "multiple_previous_fractures",
+        "importance": 0.0
+      },
+      {
+        "feature": "family_history_risk",
+        "importance": 0.0
+      },
+      {
+        "feature": "multiple_comorbidities",
+        "importance": 0.0
+      },
+      {
+        "feature": "frax_alcohol_component",
+        "importance": 0.0
+      },
+      {
+        "feature": "frax_smoking_component",
+        "importance": 0.0
+      },
+      {
+        "feature": "frax_family_history_component",
+        "importance": 0.0
+      },
+      {
+        "feature": "postmenopausal",
+        "importance": 0.0
+      }
+    ]
+  },
+  "lightgbm": {
+    "train_auc": 1.0,
+    "train_precision": 1.0,
+    "train_recall": 1.0,
+    "train_f1": 1.0,
+    "val_auc": 1.0,
+    "val_precision": 1.0,
+    "val_recall": 1.0,
+    "val_f1": 1.0,
+    "val_average_precision": 1.0,
+    "val_brier_score": 3.3828667865664087e-08,
+    "overfitting": 0.0,
+    "cv_auc_mean": 1.0,
+    "cv_auc_std": 0.0,
+    "feature_importance": [
+      {
+        "feature": "frax_like_score",
+        "importance": 192
+      },
+      {
+        "feature": "current_medications",
+        "importance": 171
+      },
+      {
+        "feature": "age_bone_interaction",
+        "importance": 171
+      },
+      {
+        "feature": "age",
+        "importance": 146
+      },
+      {
+        "feature": "age_female",
+        "importance": 141
+      },
+      {
+        "feature": "worst_t_score",
+        "importance": 135
+      },
+      {
+        "feature": "comorbidities",
+        "importance": 135
+      },
+      {
+        "feature": "survey_date",
+        "importance": 122
+      },
+      {
+        "feature": "calcium_mg_dl",
+        "importance": 111
+      },
+      {
+        "feature": "height_cm",
+        "importance": 110
+      },
+      {
+        "feature": "pain_level_0_10",
+        "importance": 103
+      },
+      {
+        "feature": "hip_t_score",
+        "importance": 100
+      },
+      {
+        "feature": "spine_t_score",
+        "importance": 97
+      },
+      {
+        "feature": "measurement_date",
+        "importance": 94
+      },
+      {
+        "feature": "weight_kg",
+        "importance": 85
+      },
+      {
+        "feature": "mobility_status",
+        "importance": 85
+      },
+      {
+        "feature": "exercise_minutes_per_week",
+        "importance": 82
+      },
+      {
+        "feature": "total_fractures",
+        "importance": 80
+      },
+      {
+        "feature": "vitamin_d_ng_ml",
+        "importance": 69
+      },
+      {
+        "feature": "quality_of_life_physical",
+        "importance": 57
+      },
+      {
+        "feature": "phosphorus_mg_dl",
+        "importance": 56
+      },
+      {
+        "feature": "pth_pg_ml",
+        "importance": 56
+      },
+      {
+        "feature": "grip_strength_low",
+        "importance": 53
+      },
+      {
+        "feature": "bmi_bone_interaction",
+        "importance": 49
+      },
+      {
+        "feature": "frax_bmi_component",
+        "importance": 44
+      },
+      {
+        "feature": "bmi",
+        "importance": 34
+      },
+      {
+        "feature": "age_risk_factor",
+        "importance": 33
+      },
+      {
+        "feature": "smoking_risk",
+        "importance": 32
+      },
+      {
+        "feature": "bmi_zscore",
+        "importance": 27
+      },
+      {
+        "feature": "age_group",
+        "importance": 26
+      },
+      {
+        "feature": "quality_of_life_mental",
+        "importance": 23
+      },
+      {
+        "feature": "ethnicity",
+        "importance": 20
+      },
+      {
+        "feature": "grip_strength_kg",
+        "importance": 20
+      },
+      {
+        "feature": "registration_date",
+        "importance": 20
+      },
+      {
+        "feature": "alcohol_units_per_week",
+        "importance": 16
+      },
+      {
+        "feature": "smoking_status",
+        "importance": 10
+      },
+      {
+        "feature": "bmi_category",
+        "importance": 9
+      },
+      {
+        "feature": "comorbidity_count",
+        "importance": 7
+      },
+      {
+        "feature": "insurance_type",
+        "importance": 7
+      },
+      {
+        "feature": "falls_past_year",
+        "importance": 7
+      },
+      {
+        "feature": "care_satisfaction_1_5",
+        "importance": 6
+      },
+      {
+        "feature": "previous_fracture_count",
+        "importance": 6
+      },
+      {
+        "feature": "fear_of_falling_1_5",
+        "importance": 5
+      },
+      {
+        "feature": "education_level",
+        "importance": 5
+      },
+      {
+        "feature": "frax_age_component",
+        "importance": 5
+      },
+      {
+        "feature": "frax_gender_component",
+        "importance": 5
+      },
+      {
+        "feature": "exercise_frequency",
+        "importance": 4
+      },
+      {
+        "feature": "gender",
+        "importance": 3
+      },
+      {
+        "feature": "frax_smoking_component",
+        "importance": 3
+      },
+      {
+        "feature": "hip_bone_category",
+        "importance": 2
+      },
+      {
+        "feature": "has_previous_fracture",
+        "importance": 2
+      },
+      {
+        "feature": "metabolic_dysfunction_score",
+        "importance": 2
+      },
+      {
+        "feature": "exercise_adequate",
+        "importance": 2
+      },
+      {
+        "feature": "vitamin_d_deficient",
+        "importance": 1
+      },
+      {
+        "feature": "worst_bone_category",
+        "importance": 1
+      },
+      {
+        "feature": "dietary_calcium_adequate",
+        "importance": 1
+      },
+      {
+        "feature": "family_history_fractures",
+        "importance": 1
+      },
+      {
+        "feature": "multiple_previous_fractures",
+        "importance": 1
+      },
+      {
+        "feature": "multiple_comorbidities",
+        "importance": 1
+      },
+      {
+        "feature": "has_osteopenia",
+        "importance": 1
+      },
+      {
+        "feature": "vitamin_d_severely_deficient",
+        "importance": 1
+      },
+      {
+        "feature": "is_very_elderly",
+        "importance": 0
+      },
+      {
+        "feature": "is_elderly",
+        "importance": 0
+      },
+      {
+        "feature": "spine_bone_category",
+        "importance": 0
+      },
+      {
+        "feature": "has_osteoporosis",
+        "importance": 0
+      },
+      {
+        "feature": "bmi_risk_low",
+        "importance": 0
+      },
+      {
+        "feature": "bmi_risk_high",
+        "importance": 0
+      },
+      {
+        "feature": "sarcopenia_risk",
+        "importance": 0
+      },
+      {
+        "feature": "calcium_abnormal",
+        "importance": 0
+      },
+      {
+        "feature": "calcium_low",
+        "importance": 0
+      },
+      {
+        "feature": "pth_elevated",
+        "importance": 0
+      },
+      {
+        "feature": "pth_severely_elevated",
+        "importance": 0
+      },
+      {
+        "feature": "alcohol_risk",
+        "importance": 0
+      },
+      {
+        "feature": "alcohol_excessive",
+        "importance": 0
+      },
+      {
+        "feature": "grip_strength_very_low",
+        "importance": 0
+      },
+      {
+        "feature": "family_history_risk",
+        "importance": 0
+      },
+      {
+        "feature": "frax_previous_fx_component",
+        "importance": 0
+      },
+      {
+        "feature": "frax_family_history_component",
+        "importance": 0
+      },
+      {
+        "feature": "frax_alcohol_component",
+        "importance": 0
+      },
+      {
+        "feature": "postmenopausal",
+        "importance": 0
+      }
+    ]
+  }
+}

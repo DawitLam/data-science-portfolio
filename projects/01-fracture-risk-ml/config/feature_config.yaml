@@ -1,0 +1,154 @@
+# Feature Engineering Configuration
+
+# Data Paths
+data:
+  raw_data_path: "../../data/synthetic"
+  processed_data_path: "data/processed"
+  features_path: "data/features"
+
+# Target Configuration
+target:
+  column: "has_fracture"
+  positive_class: true
+
+# Feature Groups
+feature_groups:
+  demographic:
+    - age
+    - gender
+    - bmi
+    - ethnicity
+    
+  clinical_measurements:
+    - spine_t_score
+    - hip_t_score
+    - height_cm
+    - weight_kg
+    - vitamin_d_ng_ml
+    - calcium_mg_dl
+    - phosphorus_mg_dl
+    - pth_pg_ml
+    - grip_strength_kg
+    
+  lifestyle:
+    - smoking_status
+    - alcohol_units_per_week
+    - exercise_frequency
+    
+  medical_history:
+    - previous_fracture_count
+    - family_history_fractures
+    - comorbidities
+    - current_medications
+
+# Feature Engineering Rules
+engineering:
+  # Categorical encoding
+  categorical_encoding:
+    method: "target_encoding"  # or "onehot", "label"
+    handle_unknown: "ignore"
+    
+  # Numerical transformations
+  numerical_transformations:
+    # Age groups based on fracture risk
+    age_groups:
+      - [18, 50, "young_adult"]
+      - [50, 65, "middle_age"] 
+      - [65, 75, "elderly"]
+      - [75, 100, "very_elderly"]
+    
+    # BMI categories
+    bmi_categories:
+      - [0, 18.5, "underweight"]
+      - [18.5, 25, "normal"]
+      - [25, 30, "overweight"]
+      - [30, 100, "obese"]
+    
+    # T-score categories (WHO criteria)
+    bone_density_categories:
+      - [-10, -2.5, "osteoporosis"]
+      - [-2.5, -1.0, "osteopenia"]
+      - [-1.0, 10, "normal"]
+
+# Medical Domain Features
+medical_features:
+  # FRAX-like risk score components
+  frax_components:
+    - age_risk_factor
+    - gender_risk_factor
+    - bmi_risk_factor
+    - previous_fracture_risk
+    - family_history_risk
+    - smoking_risk
+    - alcohol_risk
+    
+  # Derived clinical features
+  clinical_derived:
+    - bone_density_worst  # Worst of spine/hip T-score
+    - vitamin_d_deficient  # < 30 ng/mL
+    - calcium_abnormal    # Outside 8.5-10.5 mg/dL
+    - pth_elevated       # > 55 pg/mL
+    - grip_strength_low  # Age/gender adjusted percentile
+    
+  # Interaction features
+  interactions:
+    - age_gender
+    - bmi_bone_density
+    - age_bone_density
+    - smoking_alcohol
+    - vitamin_d_calcium
+
+# Feature Selection
+selection:
+  # Remove features with low variance
+  variance_threshold: 0.01
+  
+  # Remove highly correlated features
+  correlation_threshold: 0.95
+  
+  # Feature importance threshold
+  importance_threshold: 0.001
+  
+  # Maximum number of features
+  max_features: 50
+
+# Scaling and Normalization
+preprocessing:
+  # Numerical feature scaling
+  numerical_scaling:
+    method: "standard"  # or "minmax", "robust"
+    
+  # Handle missing values
+  missing_values:
+    numerical_strategy: "median"
+    categorical_strategy: "mode"
+    
+  # Outlier handling
+  outlier_detection:
+    method: "iqr"  # or "zscore", "isolation_forest"
+    threshold: 3.0
+
+# Data Quality Checks
+quality_checks:
+  # Range validation (from data dictionary)
+  range_validation:
+    age: [18, 95]
+    bmi: [16, 50]
+    spine_t_score: [-4.0, 2.0]
+    hip_t_score: [-4.0, 2.0]
+    vitamin_d_ng_ml: [5, 100]
+    grip_strength_kg: [10, 60]
+    
+  # Required columns
+  required_columns:
+    - patient_id
+    - age
+    - gender
+    - bmi
+    - has_fracture
+    
+  # Data types
+  expected_dtypes:
+    age: "int64"
+    bmi: "float64"
+    has_fracture: "bool"

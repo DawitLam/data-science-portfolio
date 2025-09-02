@@ -1,0 +1,113 @@
+# API Configuration
+
+# Server Settings
+server:
+  host: "0.0.0.0"
+  port: 8000
+  debug: false
+  reload: false
+
+# API Metadata
+api:
+  title: "Fracture Risk Prediction API"
+  description: "Advanced ML API for predicting fracture risk in elderly patients"
+  version: "1.0.0"
+  contact:
+    name: "Dawit Lambebo Gulta"
+    email: "dawit.lambebo@gmail.com"
+    url: "https://github.com/DawitLam"
+  license:
+    name: "MIT"
+    url: "https://opensource.org/licenses/MIT"
+
+# Model Settings
+model:
+  model_path: "models/trained_models/best_model.pkl"
+  scaler_path: "models/trained_models/scaler.pkl"
+  feature_names_path: "models/trained_models/feature_names.json"
+  
+# Prediction Settings
+prediction:
+  # Default risk thresholds
+  risk_thresholds:
+    low: 0.3
+    moderate: 0.6
+    high: 0.8
+  
+  # Risk categories
+  risk_categories:
+    - "Low Risk"
+    - "Moderate Risk" 
+    - "High Risk"
+    - "Very High Risk"
+  
+  # Confidence intervals
+  confidence_level: 0.95
+  
+# Input Validation
+validation:
+  # Required fields for prediction
+  required_fields:
+    - age
+    - gender
+    - bmi
+    - spine_t_score
+    - hip_t_score
+    
+  # Optional fields
+  optional_fields:
+    - vitamin_d_ng_ml
+    - calcium_mg_dl
+    - phosphorus_mg_dl
+    - pth_pg_ml
+    - grip_strength_kg
+    - smoking_status
+    - alcohol_units_per_week
+    - previous_fracture_count
+    - family_history_fractures
+    
+  # Field ranges (for validation)
+  field_ranges:
+    age: [18, 95]
+    bmi: [16, 50]
+    spine_t_score: [-4.0, 2.0]
+    hip_t_score: [-4.0, 2.0]
+    vitamin_d_ng_ml: [5, 100]
+    calcium_mg_dl: [7.0, 12.0]
+    phosphorus_mg_dl: [1.5, 6.0]
+    pth_pg_ml: [5, 200]
+    grip_strength_kg: [10, 60]
+    alcohol_units_per_week: [0, 30]
+    previous_fracture_count: [0, 10]
+
+# CORS Settings
+cors:
+  allow_origins: ["*"]
+  allow_credentials: true
+  allow_methods: ["*"]
+  allow_headers: ["*"]
+
+# Rate Limiting
+rate_limiting:
+  enabled: false
+  requests_per_minute: 60
+  requests_per_hour: 1000
+
+# Logging
+logging:
+  level: "INFO"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  log_predictions: true
+  log_file: "logs/api.log"
+
+# Health Check
+health_check:
+  endpoint: "/health"
+  include_model_status: true
+  include_system_info: true
+
+# Documentation
+docs:
+  openapi_url: "/openapi.json"
+  docs_url: "/docs"
+  redoc_url: "/redoc"

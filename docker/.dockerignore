@@ -1,0 +1,12 @@
+.git
+.gitignore
+__pycache__
+*.pyc
+.venv
+env
+venv
+data/
+models/
+*.sqlite3
+.ipynb_checkpoints
+.DS_Store

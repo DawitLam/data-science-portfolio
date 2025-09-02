@@ -1,0 +1,197 @@
+# Cardiovascular Disease Risk Assessment - Model Configuration
+# Author: [Your Name]
+# Date: September 2025
+
+# Data Configuration
+data:
+  # Path to synthetic cardiovascular dataset
+  data_path: "../../data/synthetic/cardiovascular_risk_data.csv"
+  
+  # Target variable for CVD risk prediction
+  target_column: "cvd_risk_10yr"
+  
+  # Patient identifier
+  id_column: "patient_id"
+  
+  # Train/validation/test split ratios
+  train_size: 0.7
+  val_size: 0.15
+  test_size: 0.15
+  
+  # Random state for reproducibility
+  random_state: 42
+
+# Feature Engineering Configuration
+features:
+  # Categorical features for encoding
+  categorical_features:
+    - "gender"
+    - "ethnicity" 
+    - "physical_activity"
+    - "alcohol_consumption"
+  
+  # Numerical features for scaling
+  numerical_features:
+    - "age"
+    - "systolic_bp"
+    - "diastolic_bp"
+    - "heart_rate"
+    - "bmi"
+    - "total_cholesterol"
+    - "hdl_cholesterol"
+    - "ldl_cholesterol"
+    - "triglycerides"
+    - "glucose"
+    - "hba1c"
+    - "diet_quality_score"
+  
+  # Binary features (already 0/1 encoded)
+  binary_features:
+    - "smoking_status"
+    - "diabetes"
+    - "hypertension"
+    - "family_history_cvd"
+    - "previous_mi"
+    - "previous_stroke"
+    - "on_statin_therapy"
+    - "on_bp_medication"
+  
+  # Features to exclude from modeling
+  exclude_features:
+    - "patient_id"
+    - "assessment_date"
+    - "cvd_risk_10yr"  # target variable
+
+# Model Configurations
+models:
+  # Logistic Regression (baseline)
+  logistic_regression:
+    name: "Logistic Regression"
+    class: "LogisticRegression"
+    hyperparameters:
+      C: [0.1, 1.0, 10.0]
+      penalty: ["l1", "l2"]
+      solver: ["liblinear"]
+      max_iter: [1000]
+    
+  # Random Forest
+  random_forest:
+    name: "Random Forest"
+    class: "RandomForestClassifier"
+    hyperparameters:
+      n_estimators: [100, 200, 300]
+      max_depth: [10, 20, 30, null]
+      min_samples_split: [2, 5, 10]
+      min_samples_leaf: [1, 2, 4]
+      max_features: ["sqrt", "log2"]
+    
+  # XGBoost
+  xgboost:
+    name: "XGBoost"
+    class: "XGBClassifier"
+    hyperparameters:
+      n_estimators: [100, 200, 300]
+      max_depth: [3, 6, 9]
+      learning_rate: [0.01, 0.1, 0.2]
+      subsample: [0.8, 0.9, 1.0]
+      colsample_bytree: [0.8, 0.9, 1.0]
+    
+  # LightGBM
+  lightgbm:
+    name: "LightGBM"
+    class: "LGBMClassifier"
+    hyperparameters:
+      n_estimators: [100, 200, 300]
+      max_depth: [3, 6, 9]
+      learning_rate: [0.01, 0.1, 0.2]
+      num_leaves: [31, 50, 100]
+      subsample: [0.8, 0.9, 1.0]
+
+# Model Selection Configuration
+model_selection:
+  # Cross-validation settings
+  cv_folds: 5
+  cv_scoring: "roc_auc"
+  
+  # Hyperparameter optimization
+  optimization_method: "random_search"  # or "grid_search"
+  n_iter: 20  # for random search
+  
+  # Model evaluation metrics
+  evaluation_metrics:
+    - "accuracy"
+    - "precision"
+    - "recall"
+    - "f1_score"
+    - "roc_auc"
+    - "average_precision"
+  
+  # Clinical thresholds for CVD risk
+  risk_thresholds:
+    low_risk: 0.1
+    moderate_risk: 0.2
+    high_risk: 0.3
+
+# Training Configuration
+training:
+  # Model artifact saving
+  save_models: true
+  model_save_path: "models/trained_models"
+  
+  # Feature importance analysis
+  calculate_feature_importance: true
+  
+  # Model interpretability
+  generate_shap_values: true
+  
+  # Validation settings
+  early_stopping_rounds: 10
+  eval_metric: "auc"
+  
+  # Logging
+  verbose: true
+  log_level: "INFO"
+
+# Clinical Validation
+clinical:
+  # CVD risk categories based on 10-year risk
+  risk_categories:
+    low: [0.0, 0.075]        # <7.5% risk
+    borderline: [0.075, 0.2] # 7.5-20% risk  
+    intermediate: [0.2, 0.3] # 20-30% risk
+    high: [0.3, 1.0]         # >30% risk
+  
+  # Clinical guidelines alignment
+  guidelines:
+    - "2019 AHA/ACC Primary Prevention Guidelines"
+    - "2018 AHA/ACC Cholesterol Guidelines"
+    - "2017 AHA/ACC Hypertension Guidelines"
+  
+  # Key clinical decision points
+  decision_thresholds:
+    statin_therapy: 0.075     # ≥7.5% risk
+    intensive_lifestyle: 0.05  # ≥5% risk
+    additional_testing: 0.075  # ≥7.5% risk
+
+# Performance Monitoring
+monitoring:
+  # Model performance tracking
+  track_performance_metrics: true
+  
+  # Data drift detection
+  monitor_feature_drift: true
+  drift_threshold: 0.1
+  
+  # Model retraining triggers
+  retrain_threshold: 0.05  # AUC drop threshold
+  
+  # Bias and fairness monitoring
+  fairness_metrics:
+    - "demographic_parity"
+    - "equalized_odds"
+    - "calibration_across_groups"
+  
+  protected_attributes:
+    - "gender"
+    - "ethnicity"
+    - "age_group"

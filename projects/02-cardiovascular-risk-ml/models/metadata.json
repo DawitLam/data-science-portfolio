@@ -1,0 +1,6 @@
+{
+  "best_model": "rf",
+  "best_auc": 0.5607894736842105,
+  "n_samples": 2000,
+  "features_len": 20
+}

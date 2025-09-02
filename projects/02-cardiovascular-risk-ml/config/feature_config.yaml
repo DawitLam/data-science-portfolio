@@ -1,0 +1,300 @@
+# Cardiovascular Disease Risk Assessment - Feature Engineering Configuration
+# Author: [Your Name]
+# Date: September 2025
+
+# Base Feature Configuration
+base_features:
+  # Demographics
+  demographics:
+    - "age"
+    - "gender" 
+    - "ethnicity"
+  
+  # Vital Signs
+  vital_signs:
+    - "systolic_bp"
+    - "diastolic_bp"
+    - "heart_rate"
+    - "bmi"
+  
+  # Laboratory Values
+  laboratory:
+    - "total_cholesterol"
+    - "hdl_cholesterol"
+    - "ldl_cholesterol"
+    - "triglycerides"
+    - "glucose"
+    - "hba1c"
+  
+  # Lifestyle Factors
+  lifestyle:
+    - "smoking_status"
+    - "physical_activity"
+    - "alcohol_consumption"
+    - "diet_quality_score"
+  
+  # Medical History
+  medical_history:
+    - "diabetes"
+    - "hypertension"
+    - "family_history_cvd"
+    - "previous_mi"
+    - "previous_stroke"
+    - "on_statin_therapy"
+    - "on_bp_medication"
+
+# Feature Engineering Transformations
+feature_engineering:
+  
+  # Age-based features
+  age_features:
+    # Age groups for risk stratification
+    age_groups:
+      young: [30, 45]
+      middle_aged: [45, 65]
+      older: [65, 80]
+    
+    # Age interaction terms
+    age_interactions:
+      - ["age", "smoking_status"]  # Age × Smoking
+      - ["age", "diabetes"]        # Age × Diabetes
+      - ["age", "hypertension"]    # Age × Hypertension
+  
+  # Blood Pressure Features
+  bp_features:
+    # Blood pressure categories (AHA guidelines)
+    bp_categories:
+      normal: 
+        systolic: [0, 120]
+        diastolic: [0, 80]
+      elevated:
+        systolic: [120, 130]
+        diastolic: [0, 80]
+      stage1_hypertension:
+        systolic: [130, 140]
+        diastolic: [80, 90]
+      stage2_hypertension:
+        systolic: [140, 999]
+        diastolic: [90, 999]
+    
+    # Derived BP features
+    derived_features:
+      - "pulse_pressure"      # Systolic - Diastolic
+      - "mean_arterial_pressure"  # (2×Diastolic + Systolic) / 3
+      - "bp_control_status"   # On medication vs BP levels
+  
+  # Cholesterol Features
+  cholesterol_features:
+    # LDL categories (ACC/AHA guidelines)
+    ldl_categories:
+      optimal: [0, 100]
+      near_optimal: [100, 130]
+      borderline_high: [130, 160]
+      high: [160, 190]
+      very_high: [190, 999]
+    
+    # HDL categories
+    hdl_categories:
+      low_male: [0, 40]      # Males
+      low_female: [0, 50]    # Females
+      normal: [40, 999]      # Combined
+    
+    # Derived cholesterol features
+    derived_features:
+      - "total_hdl_ratio"     # Total Cholesterol / HDL
+      - "ldl_hdl_ratio"       # LDL / HDL
+      - "non_hdl_cholesterol" # Total - HDL
+      - "atherogenic_index"   # log10(Triglycerides / HDL)
+  
+  # Diabetes/Glucose Features
+  glucose_features:
+    # Glucose categories (ADA guidelines)
+    glucose_categories:
+      normal: [0, 100]
+      prediabetes: [100, 126]
+      diabetes: [126, 999]
+    
+    # HbA1c categories
+    hba1c_categories:
+      normal: [0, 5.7]
+      prediabetes: [5.7, 6.5]
+      diabetes: [6.5, 20]
+    
+    # Diabetes control assessment
+    diabetes_control:
+      well_controlled: [0, 7.0]    # HbA1c < 7%
+      moderately_controlled: [7.0, 8.5]
+      poorly_controlled: [8.5, 20]
+  
+  # BMI Features
+  bmi_features:
+    # BMI categories (WHO/CDC)
+    bmi_categories:
+      underweight: [0, 18.5]
+      normal: [18.5, 25.0]
+      overweight: [25.0, 30.0]
+      obese_class1: [30.0, 35.0]
+      obese_class2: [35.0, 40.0]
+      obese_class3: [40.0, 999]
+    
+    # BMI risk interactions
+    bmi_interactions:
+      - ["bmi", "diabetes"]
+      - ["bmi", "hypertension"]
+  
+  # Lifestyle Risk Scores
+  lifestyle_features:
+    # Physical activity scoring
+    activity_scores:
+      sedentary: 0
+      low: 1
+      moderate: 2
+      high: 3
+    
+    # Alcohol risk categories
+    alcohol_risk:
+      none: 0
+      light: 1      # Protective
+      moderate: 2   # Neutral
+      heavy: 3      # Risk factor
+    
+    # Combined lifestyle risk score
+    lifestyle_risk_components:
+      - "smoking_status"      # Weight: 3
+      - "physical_activity"   # Weight: 2  
+      - "diet_quality_score"  # Weight: 2
+      - "alcohol_consumption" # Weight: 1
+
+# Clinical Risk Scores
+clinical_risk_scores:
+  
+  # Framingham-inspired risk score
+  framingham_score:
+    age_points:
+      male: {30: 0, 35: 2, 40: 5, 45: 6, 50: 8, 55: 10, 60: 11, 65: 12, 70: 14, 75: 15}
+      female: {30: 0, 35: 2, 40: 4, 45: 5, 50: 7, 55: 8, 60: 9, 65: 10, 70: 11, 75: 12}
+    
+    cholesterol_points:
+      ranges: [160, 200, 240, 280]
+      points: [0, 1, 2, 3, 4]
+    
+    hdl_points:
+      ranges: [35, 45, 50, 60]
+      points: [2, 1, 0, -1, -2]
+    
+    bp_points:
+      optimal: 0
+      normal: 1  
+      high_normal: 2
+      stage1: 2
+      stage2: 3
+    
+    smoking_points: 4
+    diabetes_points: 4
+  
+  # ASCVD Risk Score Components
+  ascvd_components:
+    required_features:
+      - "age"
+      - "gender"
+      - "ethnicity"
+      - "total_cholesterol"
+      - "hdl_cholesterol"
+      - "systolic_bp"
+      - "on_bp_medication"
+      - "diabetes"
+      - "smoking_status"
+    
+    ethnicity_coefficients:
+      caucasian_male: 12.344
+      african_american_male: 2.469
+      caucasian_female: -29.799
+      african_american_female: 17.114
+
+# Feature Scaling and Normalization
+preprocessing:
+  
+  # Numerical feature scaling
+  numerical_scaling:
+    method: "robust_scaler"  # Options: "standard", "minmax", "robust"
+    
+    # Features requiring log transformation
+    log_transform:
+      - "triglycerides"
+      - "glucose"
+    
+    # Features with skewed distributions
+    power_transform:
+      - "bmi"
+      - "heart_rate"
+  
+  # Categorical encoding
+  categorical_encoding:
+    # One-hot encoding for nominal features
+    onehot_features:
+      - "ethnicity"
+      - "physical_activity"
+      - "alcohol_consumption"
+    
+    # Label encoding for ordinal features
+    ordinal_features:
+      gender: ["Female", "Male"]  # Risk increases with male
+  
+  # Missing value handling
+  missing_values:
+    strategy: "median"  # For numerical features
+    categorical_strategy: "most_frequent"
+    
+    # Features likely to have missing values
+    potentially_missing:
+      - "hba1c"          # May not be measured in all patients
+      - "triglycerides"   # Sometimes missing in lipid panels
+      - "diet_quality_score"  # Self-reported data
+
+# Feature Selection
+feature_selection:
+  
+  # Correlation-based feature removal
+  correlation_threshold: 0.95
+  
+  # Variance-based feature removal
+  variance_threshold: 0.01
+  
+  # Statistical feature selection
+  statistical_methods:
+    - "chi2"           # For categorical features
+    - "f_classif"      # For numerical features
+    - "mutual_info"    # For mixed features
+  
+  # Model-based feature selection
+  model_based_selection:
+    methods:
+      - "recursive_feature_elimination"
+      - "lasso_regularization"
+      - "random_forest_importance"
+    
+    # Number of features to select
+    n_features_to_select: 50
+
+# Validation Rules
+validation_rules:
+  
+  # Clinical range validation
+  clinical_ranges:
+    age: [30, 80]
+    systolic_bp: [70, 250]
+    diastolic_bp: [40, 150]
+    heart_rate: [30, 200]
+    bmi: [15, 50]
+    total_cholesterol: [100, 400]
+    hdl_cholesterol: [15, 120]
+    glucose: [50, 400]
+    hba1c: [3.0, 15.0]
+  
+  # Logical consistency checks
+  consistency_checks:
+    - "systolic_bp >= diastolic_bp"
+    - "total_cholesterol >= hdl_cholesterol"
+    - "ldl_cholesterol >= 0"
+    - "if diabetes == 1 then glucose >= 126 or hba1c >= 6.5"
+    - "if on_bp_medication == 1 then consider hypertension history"

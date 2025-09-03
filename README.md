@@ -158,6 +158,20 @@ python .\src\models\train_model.py
 uvicorn src.api.main:app --reload --host 127.0.0.1 --port 8000
 ```
 
+### Quick small demo (minimal install)
+If you want to try a tiny demo with no large downloads, use the lightweight requirements and bundled small CSV. This runs fast and is ideal for recruiters or quick local checks.
+
+```powershell
+# From repo root (PowerShell)
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+pip install -r requirements-light.txt
+python .\scripts\demo_small.py
+
+# The script trains a tiny model on `data/synthetic/demo_small.csv` (included) and saves
+# a demo model to `./.models/demo_small_model.joblib` and prints AUC.
+```
+
 ### Environment Setup
 ```bash
 # Using conda

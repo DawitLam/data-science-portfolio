@@ -1,0 +1,18 @@
+{
+  "input_csv": "C:\\Users\\Dama\\Documents\\Python project\\portfolio\\data-science-portfolio\\demo_small.csv",
+  "target": "target",
+  "timestamp": "20250903_144533",
+  "scores": {
+    "logistic": {
+      "auc": 1.0
+    },
+    "rf": {
+      "auc": 1.0
+    },
+    "xgb": {
+      "auc": 0.5
+    }
+  },
+  "best_model": "logistic",
+  "best_auc": 1.0
+}

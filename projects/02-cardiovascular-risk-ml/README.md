@@ -1,3 +1,35 @@
+# Cardiovascular Risk Project (lightweight demo)
+
+This project demonstrates an end-to-end cardiovascular risk prediction pipeline using synthetic/demo data.
+
+What it contains
+- ETL: `src/etl.py` — reading, date parsing, computing age, basic normalization.
+- Cleaning: `src/cleaning.py` — missing-value imputation and outlier removal.
+- ML analysis: `src/ml_analysis.py` — small model suite (logistic, random forest, optional xgboost), evaluation, feature importance and interactive ROC helper.
+- Pipeline runner: `run_pipeline.py` — lightweight CLI that wires ETL→cleaning→train→save.
+
+Quick-start (PowerShell)
+
+1. Activate your virtualenv (example path used in repository):
+
+```powershell
+& "C:/Users/Dama/Documents/Python project/portfolio/data-science-portfolio/.venv/Scripts/Activate.ps1"
+```
+
+2. From the repo root run the pipeline (example target column name: `target`):
+
+```powershell
+cd projects\02-cardiovascular-risk-ml
+& "C:/Users/Dama/Documents/Python project/portfolio/data-science-portfolio/.venv/Scripts/python.exe" run_pipeline.py --target target
+```
+
+3. Artifacts (models and `training_results_*.json`) are saved under `projects/02-cardiovascular-risk-ml/models/`.
+
+If you don't have large source data, the pipeline will use `demo_small.csv` at the repository root if present. This keeps the demo lightweight for recruiters.
+
+Next steps
+- Add a small notebook cell to load `models/best_model.pkl` and show the interactive ROC.
+- Add unit tests for `etl.basic_etl` and `cleaning.impute_missing`.
 # 🫀 Cardiovascular Disease Risk Assessment ML Pipeline
 
 ## Project Overview

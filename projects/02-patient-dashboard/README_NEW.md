@@ -65,11 +65,11 @@ Synthetic Generation → Feature Engineering → Model Training → Dashboard De
 - **Population Health**: Cohort-level analytics and trends
 - **Clinical Validation**: Synthetic data maintains medical realism
 
-## 💼 **For Recruiters**
+## 💼 **Portfolio Showcase**
 
-### **🎯 Demo Highlights**
+### **🎯 Key Highlights**
 - **Interactive**: Click through tabs, search patients, see real-time predictions
-- **Technical Depth**: Full ML pipeline from data → model → deployment
+- **Technical Depth**: Full ML pipeline from data → model → deployment  
 - **Domain Expertise**: Healthcare-specific feature engineering and risk modeling
 - **Production Ready**: Robust error handling, scalable architecture
 

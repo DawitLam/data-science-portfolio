@@ -167,7 +167,7 @@ uvicorn src.api.main:app --reload --host 127.0.0.1 --port 8000
 ```
 
 ### Quick small demo (minimal install)
-If you want to try a tiny demo with no large downloads, use the lightweight requirements and bundled small CSV. This runs fast and is ideal for recruiters or quick local checks.
+If you want to try a tiny demo with no large downloads, use the lightweight requirements and bundled small CSV. This runs fast and is ideal for quick evaluations or local testing.
 
 ```powershell
 # From repo root (PowerShell)
@@ -246,10 +246,10 @@ This portfolio demonstrates:
 
 ---
 
-## 🚀 Next Steps for Recruiters
+## 🚀 Portfolio Highlights
 
 1. **Explore the code**: Each project includes detailed documentation and clean, commented code
-2. **Try the demos**: Live applications demonstrate real-world functionality
+2. **Try the demos**: Live applications demonstrate real-world functionality  
 3. **Review the tests**: Comprehensive testing shows software engineering best practices
 4. **Check the documentation**: Technical architecture and design decisions are well-documented
 

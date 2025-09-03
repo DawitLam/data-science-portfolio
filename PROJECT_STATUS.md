@@ -10,7 +10,7 @@
 
 ## 🎪 **Demo Status**
 
-### ✅ **Ready for Recruiters**
+### ✅ **Portfolio Ready**
 
 #### 🏥 **Patient Dashboard** - **LIVE & INTERACTIVE**
 - **URL**: `http://localhost:8501` (one command to launch)
@@ -30,7 +30,7 @@
 - **Status**: 🚧 **Architecture complete, implementation ongoing**
 - **Purpose**: Demonstrates cloud/Azure capabilities
 
-## 💼 **Recruiter Presentation Strategy**
+## 💼 **Portfolio Presentation Strategy**
 
 ### **🎯 Primary Demo** (5 minutes)
 1. **Show Patient Dashboard**: `streamlit run app.py`

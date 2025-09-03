@@ -56,9 +56,9 @@ python start_api.py
 
 ## 🎥 **Portfolio Highlights**
 
-### **For Employers/Recruiters:**
+### **Technical Showcase:**
 - **Medical AI Expertise**: Understanding of clinical workflows and FRAX methodology
-- **MLOps Skills**: Complete pipeline from data to deployment
+- **MLOps Skills**: Complete pipeline from data to deployment  
 - **API Development**: Production-ready FastAPI with documentation
 - **Software Engineering**: Modular code, error handling, configuration management
 - **Privacy Awareness**: Synthetic data for public demo, security considerations

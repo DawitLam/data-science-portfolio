@@ -25,7 +25,7 @@ cd projects\02-cardiovascular-risk-ml
 
 3. Artifacts (models and `training_results_*.json`) are saved under `projects/02-cardiovascular-risk-ml/models/`.
 
-If you don't have large source data, the pipeline will use `demo_small.csv` at the repository root if present. This keeps the demo lightweight for recruiters.
+If you don't have large source data, the pipeline will use `demo_small.csv` at the repository root if present. This keeps the demo lightweight for quick evaluation.
 
 Next steps
 - Add a small notebook cell to load `models/best_model.pkl` and show the interactive ROC.

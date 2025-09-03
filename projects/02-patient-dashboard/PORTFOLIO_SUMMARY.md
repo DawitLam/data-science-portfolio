@@ -113,7 +113,7 @@ This will show **REAL ML INTEGRATION** - the most impressive skill for employers
 
 Your dashboard now represents **professional-grade healthcare analytics** that will:
 
-✅ **Impress Technical Recruiters** (ML integration, data visualization)
+✅ **Demonstrate Technical Excellence** (ML integration, data visualization)
 ✅ **Show Healthcare Domain Knowledge** (Clinical protocols, medical standards)  
 ✅ **Demonstrate Full-Stack Skills** (End-to-end application development)
 ✅ **Prove Business Impact** (Clinical decision support, risk management)

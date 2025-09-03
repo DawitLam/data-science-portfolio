@@ -66,6 +66,26 @@ python src/models/train_model.py
 python start_api.py
 ```
 
+### Try it locally (Windows PowerShell)
+Use these commands in PowerShell to run a quick local demo. These assume you have a repo-level virtual environment as in the main README.
+
+```powershell
+# From repo root
+Set-Location .\projects\02-cardiovascular-risk-ml
+
+# Activate repo virtual environment
+.\.venv\Scripts\Activate.ps1
+
+# Generate synthetic data
+python .\src\data\generate_data.py
+
+# Train models
+python .\src\models\train_model.py
+
+# Start API server
+python .\start_api.py
+```
+
 ## 📁 Project Structure
 
 ```

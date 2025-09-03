@@ -131,6 +131,23 @@ cd projects/01-fracture-risk-ml
 python src/models/train_model.py
 ```
 
+### Try it locally (Windows PowerShell)
+Copy these commands into PowerShell. They assume you've already created the repo-level virtual environment as shown in the main README.
+
+```powershell
+# From repo root
+Set-Location .\projects\01-fracture-risk-ml
+
+# Activate repo venv (if created at repo root)
+.\.venv\Scripts\Activate.ps1
+
+# Train a model (quick demo)
+python .\src\models\train_model.py
+
+# Start the API (open http://127.0.0.1:8000/docs)
+uvicorn src.api.main:app --reload --host 127.0.0.1 --port 8000
+```
+
 5. **Start the API server**
 ```bash
 uvicorn src.api.main:app --reload

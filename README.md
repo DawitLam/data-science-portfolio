@@ -123,15 +123,39 @@ All projects use a consistent synthetic medical dataset containing:
 git clone https://github.com/DawitLam/data-science-portfolio.git
 cd data-science-portfolio
 
-# Set up Python environment
+# Set up Python environment (Unix / macOS)
 python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
+source venv/bin/activate
 pip install -r requirements.txt
 
 # Generate synthetic datasets
 python shared/data_generators/synthetic_medical_data_generator.py
 
 # Run individual projects (see project-specific READMEs)
+```
+
+### Try it locally (Windows PowerShell)
+If you're on Windows and using PowerShell, copy-paste the commands below in order.
+
+```powershell
+# Clone repository
+git clone https://github.com/DawitLam/data-science-portfolio.git
+Set-Location data-science-portfolio
+
+# Create virtual environment and activate (PowerShell)
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+pip install -r requirements.txt
+
+# Generate synthetic datasets (from repo root)
+python .\shared\data_generators\synthetic_medical_data_generator.py
+
+# To run a specific project, change into the project folder and follow its README
+# Example: run the fracture-risk API demo
+Set-Location .\projects\01-fracture-risk-ml
+.\.venv\Scripts\Activate.ps1  # ensure venv is active in this shell
+python .\src\models\train_model.py
+uvicorn src.api.main:app --reload --host 127.0.0.1 --port 8000
 ```
 
 ### Environment Setup

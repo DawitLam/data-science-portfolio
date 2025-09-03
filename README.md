@@ -12,9 +12,17 @@
 This portfolio showcases advanced data science skills through three interconnected projects analyzing fracture risk in elderly patients. Each project demonstrates different technical capabilities while maintaining data consistency and professional standards.
 
 ### 🚀 Live Demos
-- **[ML API Dashboard](projects/01-fracture-risk-ml/README.md)** - Interactive fracture risk prediction (see project README for local run instructions and screenshots)
-- **[Patient Analytics Dashboard](projects/02-patient-dashboard/README.md)** - Real-time patient monitoring (see project README for run instructions and screenshots)
-- **[Clinical NLP Assistant](projects/03-medical-nlp-azure/README.md)** - AI-powered clinical note analysis (see project README for run instructions and screenshots)
+- **[ML API Dashboard](projects/01-fracture-risk-ml/README.md)** - Interactive fracture risk prediction API
+- **[🏥 Patient Dashboard](projects/02-patient-dashboard/README.md)** - **LIVE DEMO AVAILABLE** - Interactive healthcare analytics with 5,000+ synthetic patients
+- **[Clinical NLP Assistant](projects/03-medical-nlp-azure/README.md)** - AI-powered clinical note analysis
+
+#### 📱 **Quick Demo: Patient Dashboard**
+```powershell
+cd projects/02-patient-dashboard
+streamlit run app.py --server.port 8501
+# Open: http://localhost:8501
+```
+**Features**: Multi-tab interface, ML predictions, patient lookup, demographic analysis, risk stratification
 
 Note: Some demos may not be publicly deployed. If a demo link is not available, you can either run the demo locally (follow the linked project README) or contact dawit.lambebo@gmail.com to request a hosted demo.
 

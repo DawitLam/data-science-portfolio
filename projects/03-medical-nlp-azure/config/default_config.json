@@ -1,0 +1,18 @@
+{
+  "preserve_medical_terms": true,
+  "use_azure": false,
+  "azure_endpoint": null,
+  "azure_key": null,
+  "output_directory": "outputs",
+  "model_directory": "models",
+  "max_features": 5000,
+  "test_size": 0.2,
+  "random_state": 42,
+  "ngram_range": [1, 2],
+  "min_df": 2,
+  "max_df": 0.95,
+  "cross_validation_folds": 5,
+  "confidence_threshold": 0.5,
+  "save_format": "csv",
+  "log_level": "INFO"
+}

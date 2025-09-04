@@ -1,0 +1,40 @@
+version: '3.8'
+
+services:
+  medical-nlp-api:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - AZURE_TEXT_ANALYTICS_ENDPOINT=${AZURE_TEXT_ANALYTICS_ENDPOINT:-}
+      - AZURE_TEXT_ANALYTICS_KEY=${AZURE_TEXT_ANALYTICS_KEY:-}
+      - LOG_LEVEL=INFO
+    volumes:
+      - ./models:/app/models:ro
+      - ./outputs:/app/outputs
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "python", "-c", "import requests; requests.get('http://localhost:8000/health')"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  # Optional: Add a reverse proxy (nginx) for production
+  nginx:
+    image: nginx:alpine
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./deployment/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./deployment/ssl:/etc/nginx/ssl:ro
+    depends_on:
+      - medical-nlp-api
+    restart: unless-stopped
+    profiles:
+      - production
+
+networks:
+  default:
+    name: medical-nlp-network

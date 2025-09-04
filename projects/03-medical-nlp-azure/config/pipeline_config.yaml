@@ -1,0 +1,57 @@
+# Medical NLP Pipeline Configuration
+
+# Azure Cognitive Services Configuration (Optional)
+azure:
+  endpoint: null  # Set to your Azure Text Analytics endpoint
+  api_key: null   # Set to your Azure Text Analytics API key
+  use_azure: false  # Set to true to enable Azure integration
+
+# Text Preprocessing Configuration
+preprocessing:
+  preserve_medical_terms: true
+  expand_abbreviations: true
+  remove_stopwords: true
+  lemmatize: true
+
+# Feature Extraction Configuration
+features:
+  max_features: 5000
+  ngram_range: [1, 2]  # Include unigrams and bigrams
+  min_df: 2
+  max_df: 0.95
+
+# Model Training Configuration
+training:
+  test_size: 0.2
+  random_state: 42
+  cross_validation_folds: 5
+  class_balance: "balanced"
+
+# Entity Recognition Configuration
+entity_recognition:
+  use_local_models: true
+  use_pattern_matching: true
+  confidence_threshold: 0.5
+
+# Classification Models Configuration
+classification:
+  note_type:
+    models: ["logistic_regression", "random_forest", "naive_bayes"]
+    classes: ["clinical_note", "discharge_summary", "patient_feedback", "progress_note"]
+  
+  sentiment:
+    models: ["logistic_regression", "svm", "naive_bayes"]
+    classes: ["positive", "negative", "neutral"]
+
+# Output Configuration
+output:
+  directory: "outputs"
+  model_directory: "models"
+  save_format: "csv"  # Options: csv, json, excel
+  include_probabilities: true
+
+# Logging Configuration
+logging:
+  level: "INFO"  # Options: DEBUG, INFO, WARNING, ERROR
+  log_to_file: false
+  log_file: "medical_nlp.log"

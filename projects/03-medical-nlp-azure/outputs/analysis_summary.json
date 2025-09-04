@@ -1,0 +1,36 @@
+{
+  "preprocessing_summary": {
+    "total_records": 100,
+    "avg_original_length": 85.59,
+    "avg_cleaned_length": 87.89,
+    "avg_token_count": 8.82,
+    "records_with_medications": 0,
+    "records_with_conditions": 0,
+    "records_with_procedures": 0,
+    "note_type_distribution": {
+      "clinical_note": 33,
+      "patient_feedback": 25,
+      "progress_note": 25,
+      "discharge_summary": 17
+    }
+  },
+  "entity_statistics": {
+    "total_records": 100,
+    "avg_entities_per_record": 1.93,
+    "most_common_categories": {
+      "number": 33,
+      "symptoms": 21,
+      "date": 17,
+      "medications": 12,
+      "conditions": 12,
+      "vital_sign": 10,
+      "anatomy": 10,
+      "other": 7
+    },
+    "records_with_medications": 12,
+    "records_with_conditions": 12,
+    "records_with_vital_signs": 10,
+    "records_with_procedures": 0
+  },
+  "analysis_timestamp": "2025-09-03T20:43:19.269064"
+}
